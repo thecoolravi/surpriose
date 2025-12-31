@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy new year surprise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+    <div class="heart">❤️</div>
+    <h1>Happy New Year, My Love</h1>
+    <h2>You are my favorite beginning</h2>
+
+    <div class="countdown">
+        <div class="box"><span id="d">00</span><br>Days</div>
+        <div class="box"><span id="h">00</span><br>Hours</div>
+        <div class="box"><span id="m">00</span><br>Minutes</div>
+        <div class="box"><span id="s">00</span><br>Seconds</div>
+    </div>
+</section>
+
+<!-- MUSIC -->
+<section>
+    <h2>Our Songs 🎵</h2>
+    <div class="music">
+        <audio id="player" controls>
+            <source src="songs/song1.mp3" type="audio/mpeg">
+        </audio>
+        <br><br>
+        <select onchange="changeSong(this.value)">
+            <option value="img/die.mp3">Our First Song</option>
+            <option value="img/Meri.mp3">Late Night Memories</option>
+            <option value="img/Perfect.mp3">Forever Us</option>
+        </select>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section>
+    <h2>Our Memories 📸</h2>
+    <div class="gallery">
+        <img src="img/photo1.JPG">
+        <img src="img/photo2.jpeg">
+        <img src="img/photo3.JPG">
+        <img src="img/photo4.jpeg">
+        <img src="img/photo5.JPG">
+        <img src="img/photo6.JPG">
+    </div>
+</section>
+
+<!-- LETTER -->
+<section>
+    <h2>From My Heart 💌</h2>
+    <div class="letter">
+        My love,<br><br>
+        This year taught me many things,  
+        but before 2025 ends.  
+        <br><br>
+        Thank you for staying, for trying,  
+        and for being patient with me even when I fail.  
+        <br><br>
+        I want every New Year to start and end with you.  
+        <br><br>
+        Always yours ❤️
+    </div>
+</section>
+
+<p>
+<p>But before 2025 ends I want to say something</p>
+<p>I want to say sorry...!!!</p>
+<p>Sorry for being rude Sometimes.!!</p>
+<p>Sorry for the times I wasn't there for you!</p>
+<p>Sorry for my mood swings!!</p>
+<p>Sorry for the Misunderstandings.?</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+
+
+<p>Sorry for bothering You.!!</p>
+<p>orry if i made you feel Unimportant./</p>
+<p>Sorry for the hurt I caused :)</p>
+<p>I m grateful to have you.</p>
+
+
+
+
+
+    Made just for you ✨
+</footer>
+
+<script>
+const newYear = new Date("January 1, 2026 00:00:00").getTime();
+
+setInterval(() => {
+    const now = new Date().getTime();
+    const diff = newYear - now;
+
+    document.getElementById("d").innerHTML = Math.floor(diff / (1000*60*60*24));
+    document.getElementById("h").innerHTML = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    document.getElementById("m").innerHTML = Math.floor((diff % (1000*60*60)) / (1000*60));
+    document.getElementById("s").innerHTML = Math.floor((diff % (1000*60)) / 1000);
+}, 1000);
+
+function changeSong(song) {
+    const player = document.getElementById("player");
+    player.src = song;
+    player.play();
+}
+</script>
+
+</body>
+<link rel="stylesheet" href="javascript/script.js">
+</html>
